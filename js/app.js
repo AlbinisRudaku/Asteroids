@@ -487,14 +487,6 @@ function update() {
     );
   }
 
-  const infoTxt = "Press ARROW KEYS or AWSD to move and SPACEBAR to shoot!"
-  ctx.textAlign = "center"
-  CSSTransition.textBaseline = "middle";
-  CSSTransition.fillStyle = "white"
-  ctx.font = TEXT_SIZE + "px dejavu sans mono"
-  ctx.fillText(infoTxt, canv.width / 2, canv.height / 2)
-  // textAlpha = 1;
-
   // draw the score
   ctx.textAlign = "right";
   ctx.textBaseline = "middle";
@@ -572,6 +564,13 @@ function update() {
       }
     }
   }
+
+  const infoTxt = "Press ARROW KEYS or AWSD to move and SPACEBAR to shoot!"
+  ctx.textAlign = "center"
+  CSSTransition.textBaseline = "middle";
+  CSSTransition.fillStyle = "white"
+  ctx.font = TEXT_SIZE / 2 + "px dejavu sans mono"
+  ctx.fillText(infoTxt, canv.width / 2, canv.height - 20)
 
   // handle edge of screen
   if (ship.x < 0 - ship.r) {
