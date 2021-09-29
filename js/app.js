@@ -122,8 +122,8 @@ function explodeShip() {
 
 function gameOver() {
   ship.dead = true;
-  text = "Game Over";
-  textAlpha = 1.0;
+  text = "Game Over! Best of luck next time";
+  textAlpha = 1.2;
 }
 
 function keyDown(/** @type {KeyboardEvent} */ ev) {
@@ -486,6 +486,14 @@ function update() {
       lifeColour
     );
   }
+
+  const infoTxt = "Press ARROW KEYS or AWSD to move and SPACEBAR to shoot!"
+  ctx.textAlign = "center"
+  CSSTransition.textBaseline = "middle";
+  CSSTransition.fillStyle = "white"
+  ctx.font = TEXT_SIZE + "px dejavu sans mono"
+  ctx.fillText(infoTxt, canv.width / 2, canv.height / 2)
+  // textAlpha = 1;
 
   // draw the score
   ctx.textAlign = "right";
